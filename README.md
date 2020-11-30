@@ -3,6 +3,7 @@ PlaceHolder для ткинтера. Адаптирован для 2-3 Entrys 4 
 Показ работы PlaceHolder-ра здесь https://www.youtube.com/watch?v=b70ydACVMUE&feature=youtu.be
 
 ВЫЗОВ САМОГО PLACEHOLDER-ра
+```py
 main = PlaceHolder('Login', 'password', 'number')
 ent = Entry() # login
 ent2 = Entry() # password
@@ -20,4 +21,5 @@ def three(event):
 ent.bind('<Button-1>', first)
 ent2.bind('<Button-1>', second)
 ent3.bind('<Button-1>', three)
+```
   
