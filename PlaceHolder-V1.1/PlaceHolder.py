@@ -1,12 +1,14 @@
 from tkinter import *
 
+__author__ = 'SlavaGolovatskyu'
+__version__ = 'V1.1'
 """
 При создания класса тоисть
 PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все строки тоисть 3 строки и больше.
 """
 
 class PlaceHolder:
-	def __init__(self, arg1, arg2, arg3 = None, arg4 = None):
+	def __init__(self, arg1, arg2 = None, arg3 = None, arg4 = None):
 		super().__init__()
 
 		self.MainDict = {
@@ -26,47 +28,65 @@ class PlaceHolder:
 	"""
 	def DeletePlaceHolder(self, number, CountEnter, enter, enter_2, enter_3 = None, enter_4 = None):
 		numb = 1 if number == 1 else number
+		# Проверка на наше число. С помощью тернарника и обычных проверок.
 		if numb != 1:
 			numb = 2 if number == 2 else 3
 		# if numb == 3:
 		#	numb = 3 if number == 3 else 4
 
+		# Делаем генератор списка. С проверкой. Если i не равно numb добавляем елемент. В ином случае пропускаем.
 		array = [i for i in range(1, CountEnter + 1) if i != numb]
 
+		# Ищем главную Entry
 		MainEnter = enter if numb == 1 else 2
 		if MainEnter == 2:
 			MainEnter = enter_2 if numb == 2 else enter_3
 		# if MainEnter == 3:
 		#	MainEnter = enter_3 if numb == 3 else enter_4
 
+		# Ищем 2 Entry
 		SecondEnter = enter if array[0] == 1 else enter_2
 
+		# Пока что None. Но если код заходит в проверку значение меняетса.
 		ThreeEnter = None
 
+		if CountEnter == 1:
+			MainEnter.delete(0, END)
+		# Если Entry 2 шт. Код делает следующее...
 		if CountEnter == 2:
+			# Добавляем главное число в список которое передали в нашу функцию.
 			array.append(numb)
 			DictForCheck = {
 				array[0]: SecondEnter.get(),
+				# После того как добавили число в список появился елемент с идексом 1
 				array[1]: MainEnter.get()
 			}
 			if self.MainDict[array[0]] == DictForCheck[array[0]] and self.MainDict[array[1]] == DictForCheck[array[1]]:
 				MainEnter.delete(0, END)
 			else:
 				if self.MainDict[array[0]] != DictForCheck[array[0]] and not DictForCheck[array[0]]:
+					# Во-втором Entry записываем данные.
 					SecondEnter.insert(0, self.MainDict[array[0]])
+					# В главном Entry удаляем все данные
 					MainEnter.delete(0, END)
 
 				if self.MainDict[array[1]] != DictForCheck[array[1]] and not DictForCheck[array[1]]:
+					# В главном Entry записываем данные.
 					MainEnter.insert(0,  self.MainDict[array[1]])
+					# Во-втором Entry удаляем все данные
 					SecondEnter.delete(0, END)
 
 				MainEnter.delete(0, END)
 		else:
+			# Как и было сказано раньше если код заходит в проверку. Некоторые переменые меняют свое значение.
 			ThreeEnter = enter_2 if array[1] == 2 else enter_3
 			DictForCheck = {
-				array[0]: SecondEnter.get(),
-				array[1]: ThreeEnter.get()
+				array[0]: SecondEnter.get(), # SecondEnter это найденый второй Entry
+				array[1]: ThreeEnter.get() # ThreeEnter это найденый третий Entry
 			}
+			# Метод delete удаляет данные. Метод insert записывает данные.
+			# Если хотите разобраться в проверках советую просмотреть на словать в def __init__():
+			# Так будет проще понять что и как я делал.
 			if self.MainDict[array[0]] == DictForCheck[array[0]] and self.MainDict[array[1]] == DictForCheck[array[1]]:
 				MainEnter.delete(0, END)
 			else:
