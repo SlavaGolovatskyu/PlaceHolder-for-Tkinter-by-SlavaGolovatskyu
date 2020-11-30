@@ -4,10 +4,13 @@ PlaceHolder для ткинтера. Адаптирован для 2-3 Entrys 4 
 
 ВЫЗОВ САМОГО PLACEHOLDER-ра
 ```py
+from tkinter import *
+
+root = Tk()
 main = PlaceHolder('Login', 'password', 'number')
-ent = Entry() # login
-ent2 = Entry() # password
-ent3 = Entry() # number
+ent = Entry(root) # login
+ent2 = Entry(root) # password
+ent3 = Entry(root) # number
 
 def first(event):
   main.DeletePlaceHolder(1, 3, ent, ent2, ent3)
@@ -21,5 +24,16 @@ def three(event):
 ent.bind('<Button-1>', first)
 ent2.bind('<Button-1>', second)
 ent3.bind('<Button-1>', three)
+
+def insertNumb():
+  ent.insert(0, 'login')
+  ent2.insert(0, 'password')
+  ent3.insert(0, 'number')
+def packEntrys():
+  ent.pack()
+  ent2.pack()
+  ent3.pack()
+
+root.mainloop()
 ```
   
