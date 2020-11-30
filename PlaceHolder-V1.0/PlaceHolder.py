@@ -1,8 +1,12 @@
 from tkinter import *
 
+
+__author__ = 'SlavaGolovatskyu'
+__version__ = 'V1.1'
+
 """
 При создания класса тоисть
-PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все строки тоисть 3 строки и больше.
+PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все строки тоисть 3 штуки. Не больше не меньше.
 """
 
 class PlaceHolder:
