@@ -10,13 +10,13 @@ ent2 = Entry() # password
 ent3 = Entry() # number
 
 def first(event):
-  DeletePlaceHolder(1, 3, ent, ent2, ent3)
+  main.DeletePlaceHolder(1, 3, ent, ent2, ent3)
  
 def second(event):
-  DeletePlaceHolder(2, 3, ent, ent2, ent3)
+  main.DeletePlaceHolder(2, 3, ent, ent2, ent3)
 
 def three(event):
-  DeletePlaceHolder(3, 3, ent, ent2, ent3)
+  main.DeletePlaceHolder(3, 3, ent, ent2, ent3)
 
 ent.bind('<Button-1>', first)
 ent2.bind('<Button-1>', second)
