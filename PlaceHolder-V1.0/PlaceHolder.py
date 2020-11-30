@@ -2,7 +2,7 @@ from tkinter import *
 
 
 __author__ = 'SlavaGolovatskyu'
-__version__ = 'V1.1'
+__version__ = 'V1.0'
 
 """
 При создания класса тоисть
