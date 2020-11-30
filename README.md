@@ -25,10 +25,14 @@ ent.bind('<Button-1>', first)
 ent2.bind('<Button-1>', second)
 ent3.bind('<Button-1>', three)
 
+insertNumb()
+packEntrys()
+
 def insertNumb():
   ent.insert(0, 'login')
   ent2.insert(0, 'password')
   ent3.insert(0, 'number')
+  
 def packEntrys():
   ent.pack()
   ent2.pack()
