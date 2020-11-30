@@ -4,7 +4,7 @@ __author__ = 'SlavaGolovatskyu'
 __version__ = 'V1.1'
 """
 При создания класса тоисть
-PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все строки тоисть 2 или 3 строки.
+PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все строки тоисть 3 строки и больше.
 """
 
 class PlaceHolder:
@@ -96,12 +96,5 @@ class PlaceHolder:
 
 				if self.MainDict[array[1]] != DictForCheck[array[1]] and not DictForCheck[array[1]]:
 					ThreeEnter.insert(0, self.MainDict[array[1]])
-					MainEnter.delete(0, END)
-
-				if (self.MainDict[array[0]] != DictForCheck[array[0]] and not DictForCheck[array[0]] and not
-					DictForCheck[array[1]] and self.MainDict[array[1]] != DictForCheck[array[1]]):
-
-					ThreeEnter.insert(0, self.MainDict[array[1]])
-					SecondEnter.insert(0, self.MainDict[array[0]])
 					MainEnter.delete(0, END)
 				MainEnter.delete(0, END)
