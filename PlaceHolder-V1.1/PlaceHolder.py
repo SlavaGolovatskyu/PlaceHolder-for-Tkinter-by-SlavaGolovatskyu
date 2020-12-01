@@ -48,7 +48,7 @@ class PlaceHolder:
 		SecondEnter = enter if array[0] == 1 else enter_2
 
 		# Пока что None. Но если код заходит в проверку значение меняетса.
-		ThreeEnter = None
+		ThreeEnter = True
 
 		if CountEnter == 1:
 			MainEnter.delete(0, END)
@@ -61,22 +61,6 @@ class PlaceHolder:
 				# После того как добавили число в список появился елемент с идексом 1
 				array[1]: MainEnter.get()
 			}
-			if self.MainDict[array[0]] == DictForCheck[array[0]] and self.MainDict[array[1]] == DictForCheck[array[1]]:
-				MainEnter.delete(0, END)
-			else:
-				if self.MainDict[array[0]] != DictForCheck[array[0]] and not DictForCheck[array[0]]:
-					# Во-втором Entry записываем данные.
-					SecondEnter.insert(0, self.MainDict[array[0]])
-					# В главном Entry удаляем все данные
-					MainEnter.delete(0, END)
-
-				if self.MainDict[array[1]] != DictForCheck[array[1]] and not DictForCheck[array[1]]:
-					# В главном Entry записываем данные.
-					MainEnter.insert(0,  self.MainDict[array[1]])
-					# Во-втором Entry удаляем все данные
-					SecondEnter.delete(0, END)
-
-				MainEnter.delete(0, END)
 		else:
 			# Как и было сказано раньше если код заходит в проверку. Некоторые переменые меняют свое значение.
 			ThreeEnter = enter_2 if array[1] == 2 else enter_3
@@ -84,10 +68,21 @@ class PlaceHolder:
 				array[0]: SecondEnter.get(), # SecondEnter это найденый второй Entry
 				array[1]: ThreeEnter.get() # ThreeEnter это найденый третий Entry
 			}
-			# Метод delete удаляет данные. Метод insert записывает данные.
-			# Если хотите разобраться в проверках советую просмотреть на словать в def __init__():
-			# Так будет проще понять что и как я делал.
-			if self.MainDict[array[0]] == DictForCheck[array[0]] and self.MainDict[array[1]] == DictForCheck[array[1]]:
+		# Метод delete удаляет данные. Метод insert записывает данные.
+		# Если хотите разобраться в проверках советую просмотреть на словать в def __init__():
+		# Так будет проще понять что и как я делал.
+		if self.MainDict[array[0]] == DictForCheck[array[0]] and self.MainDict[array[1]] == DictForCheck[array[1]]:
+			MainEnter.delete(0, END)
+		else:
+			if CountEnter == 2:
+				if self.MainDict[array[1]] != DictForCheck[array[1]] and not DictForCheck[array[1]]:
+					# В главном Entry записываем данные.
+					MainEnter.insert(0, self.MainDict[array[1]])
+					# Во-втором Entry удаляем все данные
+					SecondEnter.delete(0, END)
+				if self.MainDict[array[0]] != DictForCheck[array[0]] and not DictForCheck[array[0]]:
+					SecondEnter.insert(0, self.MainDict[array[0]])
+					MainEnter.delete(0, END)
 				MainEnter.delete(0, END)
 			else:
 				if self.MainDict[array[0]] != DictForCheck[array[0]] and not DictForCheck[array[0]]:
