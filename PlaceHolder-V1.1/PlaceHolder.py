@@ -9,8 +9,7 @@ PlaceHold = PlaceHolder(arg1, arg2, arg3) нужно передать все с�
 
 class PlaceHolder:
 	def __init__(self, arg1, arg2 = None, arg3 = None, arg4 = None):
-		super().__init__()
-
+		
 		self.MainDict = {
 			1: arg1,  # Строка которую вы хотите впихнуть в первый Entry
 			2: arg2,  # Строка которую вы хотите впихнуть во второй Entry и т.д
