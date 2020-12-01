@@ -26,7 +26,7 @@ class PlaceHolder:
 	        enter = Entry() в 3 аргумент данной функции передаете эту переменую и следующие
 	НА ДАННЫЙ МОМЕНТ ФУНКЦИЯ РАБОТАЕТ НОРМАЛЬНО ВСЕГОЛИШ С 3 АРГУМЕНТАМИ 4 и больше неработают. 
 	"""
-	def DeletePlaceHolder(self, number, CountEnter, enter, enter_2, enter_3 = None, enter_4 = None):
+	def DeletePlaceHolder(self, number, CountEnter, enter, enter_2 = None, enter_3 = None, enter_4 = None):
 		numb = 1 if number == 1 else number
 		# Проверка на наше число. С помощью тернарника и обычных проверок.
 		if numb != 1:
@@ -52,6 +52,7 @@ class PlaceHolder:
 
 		if CountEnter == 1:
 			MainEnter.delete(0, END)
+			return
 		# Если Entry 2 шт. Код делает следующее...
 		if CountEnter == 2:
 			# Добавляем главное число в список которое передали в нашу функцию.
