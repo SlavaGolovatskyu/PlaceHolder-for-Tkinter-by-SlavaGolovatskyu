@@ -26,15 +26,8 @@ class PlaceHolder:
 	НА ДАННЫЙ МОМЕНТ ФУНКЦИЯ РАБОТАЕТ НОРМАЛЬНО ВСЕГОЛИШ С 3 и 2 аргументами. 4 и больше неработают. 
 	"""
 	def DeletePlaceHolder(self, number, CountEnter, enter, enter_2 = None, enter_3 = None, enter_4 = None):
-		numb = 1 if number == 1 else number
-		# Проверка на наше число. С помощью тернарника и обычных проверок.
-		if numb != 1:
-			numb = 2 if number == 2 else 3
-		# if numb == 3:
-		#	numb = 3 if number == 3 else 4
-
 		# Делаем генератор списка. С проверкой. Если i не равно numb добавляем елемент. В ином случае пропускаем.
-		array = [i for i in range(1, CountEnter + 1) if i != numb]
+		array = [i for i in range(1, CountEnter + 1) if i != number]
 
 		# Ищем главную Entry
 		MainEnter = enter if numb == 1 else 2
